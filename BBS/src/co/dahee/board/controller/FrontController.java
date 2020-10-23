@@ -14,7 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.dahee.board.command.LoginAction;
 import co.dahee.board.command.LoginForm;
+import co.dahee.board.command.LogoutAction;
 import co.dahee.board.command.MainAction;
+import co.dahee.board.command.MemberForm;
+import co.dahee.board.command.MemberInsertAction;
+import co.dahee.board.command.MemberListAction;
 import co.dahee.board.common.Action;
 
 /**
@@ -41,6 +45,12 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainAction()); // 처음 들어오는 페이지 처리 (index.jsp)
 		map.put("/login.do", new LoginAction()); // 로그인 메뉴 처리 (url에서 context path가 '/login.do'로 들어오면 LoginAction()을 수행하라는 의미)
 		map.put("/loginForm.do", new LoginForm()); // 로그인 폼 호출
+		map.put("/memberList.do", new MemberListAction()); // 회원 전체 리스트 보기
+		map.put("/memberForm.do", new MemberForm()); // 회원 가입 화면 호출
+		map.put("/memberInsert.do", new MemberInsertAction()); // 회원 입력
+		map.put("/logout.do", new LogoutAction()); // 로그아웃
+//		map.put("/main.do", new MainAction());
+//		map.put("/main.do", new MainAction());
 	}
 
 	/**
